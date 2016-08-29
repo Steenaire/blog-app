@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <%= link_to '/logout', method: :destroy %>
+    <% else %>
+      <a href="/login"><p>Log In</p></a>
+      <a href="/signup"><p>Sign Up</p></a>
+    <% end %>
     <%= yield %>
   </body>
 </html>
