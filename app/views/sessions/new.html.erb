@@ -1,0 +1,12 @@
+<h1>Log In to Blog Site</h1>
+<%= form_tag '/login', method: :post do %>
+  <div>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+  </div>
+  <div>
+    <%= label_tag :password %>
+    <%= text_field_tag :password, "", type: "password" %>
+  </div>
+  <%= submit_tag "login" %>
+<% end %>
