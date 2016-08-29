@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/', to: 'posts#index'
+  get '/posts', to: 'posts#index'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
 
-  get '/posts/:id', to: 'posts#show', as: 'post'
   get '/posts/new', to: 'posts#new'
+  get '/posts/:id', to: 'posts#show', as: 'post'
   post '/posts', to: 'posts#create'
 end

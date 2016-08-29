@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    # redirect_to '/' unless current_user
   end
 
   def create
@@ -18,6 +19,10 @@ class PostsController < ApplicationController
     else
       redirect_to '/psots/new'
     end
+  end
+
+  def show
+    @post = Post.find_by(id: params[:id])
   end
 
 end
