@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    if params[:category]
+      @posts = Category.find_by(id: params[:category]).posts
+    else
+      @posts = Post.all
+    end
   end
 
   def new

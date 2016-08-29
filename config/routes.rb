@@ -19,4 +19,6 @@ Rails.application.routes.draw do
 
   get 'categories/new', to: 'categories#new'
   post '/categories', to: 'categories#create'
+
+  post '/post_categories', to: 'post_categories#create'
 end

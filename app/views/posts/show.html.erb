@@ -3,7 +3,7 @@
   <a href= "/posts/<%= @post.id %>/edit"><p>Edit Post</p></a>
   <%= link_to "Delete Post", "/posts/#{@post.id}", method: :delete %>
   <p>Add category:</p>
-  <%= form_tag "/categories", method: :post do %>
+  <%= form_tag "/post_categories", method: :post do %>
     <div>
       <%= label_tag :category_id %>
       <%= text_field_tag :category_id %>
@@ -18,7 +18,7 @@
 <p>By <%= @post.user.name %></p>
 <p>Catgories:</p>
 <% @post.categories.each do |category| %>
-  <%= category.name %>
+  <a href="/posts?category=<%= category.id %>"><%= category.name %></a>
 <% end %>
 <p>
 <%= @post.content %>
