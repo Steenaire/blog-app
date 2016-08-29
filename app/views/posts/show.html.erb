@@ -1,6 +1,7 @@
 <h1><%= @post.title %></h1>
 <% if current_user && (current_user.id == @post.user_id) %>
   <a href= "/posts/<%= @post.id %>/edit"><p>Edit Post</p></a>
+  <%= link_to "Delete Post", "/posts/#{@post.id}", method: :delete %>
 <% end %>
 <p>By <%= @post.user.name %></p>
 <p>
