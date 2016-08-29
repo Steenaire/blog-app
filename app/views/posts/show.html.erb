@@ -2,8 +2,24 @@
 <% if current_user && (current_user.id == @post.user_id) %>
   <a href= "/posts/<%= @post.id %>/edit"><p>Edit Post</p></a>
   <%= link_to "Delete Post", "/posts/#{@post.id}", method: :delete %>
+  <p>Add category:</p>
+  <%= form_tag "/categories", method: :post do %>
+    <div>
+      <%= label_tag :category_id %>
+      <%= text_field_tag :category_id %>
+    </div>
+    <div>
+      <%= label_tag :post_id %>
+      <%= text_field_tag :post_id, @post.id %>
+    </div>
+    <%= submit_tag "Add" %>
+  <% end %>
 <% end %>
 <p>By <%= @post.user.name %></p>
+<p>Catgories:</p>
+<% @post.categories.each do |category| %>
+  <%= category.name %>
+<% end %>
 <p>
 <%= @post.content %>
 </p>

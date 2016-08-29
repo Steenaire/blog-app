@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   patch '/posts/:id', to: 'posts#update'
   post '/posts', to: 'posts#create'
   delete '/posts/:id', to: 'posts#destroy'
+
+  get 'categories/new', to: 'categories#new'
+  post '/categories', to: 'categories#create'
 end
