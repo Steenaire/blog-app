@@ -10,11 +10,13 @@
 
   <body>
     <% if current_user %>
+      <a href="/users/<%= current_user.id %>">Your Posts</a>
       <%= link_to "Log Out", '/logout', method: :delete %>
     <% else %>
       <a href="/login"><p>Log In</p></a>
       <a href="/signup"><p>Sign Up</p></a>
     <% end %>
+    <a href="/">Index</a>
     <%= yield %>
   </body>
 </html>
