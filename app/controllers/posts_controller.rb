@@ -15,9 +15,9 @@ class PostsController < ApplicationController
       user_id: params[:user_id]
       )
     if post.save
-      redirect_to "/posts/#{id}"
+      redirect_to "/posts/#{post.id}"
     else
-      redirect_to '/psots/new'
+      redirect_to '/posts/new'
     end
   end
 

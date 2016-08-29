@@ -1,0 +1,6 @@
+<h1>Blog Posts</h1>
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <a href="/posts/<%= post.id %>"><p><%= post.title %> by <%= post.user.name %></p></a>
+  <% end %>
+<% end %>
