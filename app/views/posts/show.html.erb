@@ -5,13 +5,9 @@
   <p>Add category:</p>
   <%= form_tag "/post_categories", method: :post do %>
     <div>
-      <%= label_tag :category_id %>
-      <%= text_field_tag :category_id %>
+      <%= collection_select :category, :category_id, Category.all, :id, :name %>
     </div>
-    <div>
-      <%= label_tag :post_id %>
-      <%= text_field_tag :post_id, @post.id %>
-    </div>
+      <%= hidden_field_tag :post_id, @post.id %>
     <%= submit_tag "Add" %>
   <% end %>
 <% end %>
